@@ -6,7 +6,12 @@
   "version": "1.9.0",
   "author": {
     "name": "usaMi",
-    "github": "M4sh1r0-Renji"
+    "github": "M4sh1r0-Renji",
+    "steamId": "76561198981456668",
+    "steamVerification": {
+      "provider": "steam-openid",
+      "status": "pending"
+    }
   },
   "owners": ["M4sh1r0-Renji"],
   "description": "Adds configurable runtime terrain deformation, scorch marks, and vegetation clearing to Ravenfield explosions.",

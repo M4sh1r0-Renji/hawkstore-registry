@@ -29,9 +29,10 @@ The first live entry is `com.usami.dynamicterraincraters` (Dynamic Terrain Crate
 2. Validate the manifest and package locally with `hawkstore-publishing`.
 3. Add `mods/<package-id>/manifest.json` and `README.md` on a submission branch.
 4. Open a pull request using the publish template.
-5. GitHub Actions validates IDs, categories, versions, ownership, index consistency, and the live Release asset's size and SHA-256.
-6. A maintainer reviews first-time publishers. Accepted versions are immutable.
-7. The publishing pipeline creates a GitHub Release and updates `index.json`.
+5. The publishing service verifies the submitted SteamID64 through a Steam OpenID callback. Author-submitted manifests remain `pending`; only the Registry service can promote the identity to `verified`.
+6. GitHub Actions validates IDs, categories, versions, ownership, Steam identity fields, index consistency, and the live Release asset's size and SHA-256.
+7. A maintainer reviews first-time publishers. Accepted versions are immutable.
+8. The publishing pipeline creates a GitHub Release and updates `index.json`.
 
 Run the repository check locally:
 

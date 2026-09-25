@@ -4,7 +4,12 @@
   "id": "com.example.ravenfield.sample",
   "name": "Example Ravenfield Plugin",
   "version": "1.0.0",
-  "author": { "name": "Example Author", "github": "example" },
+  "author": {
+    "name": "Example Author",
+    "github": "example",
+    "steamId": "76561190000000000",
+    "steamVerification": { "provider": "steam-openid", "status": "pending" }
+  },
   "owners": ["example"],
   "description": "A minimal example showing the Hawkstore package contract.",
   "categories": ["Developer-Tools"],

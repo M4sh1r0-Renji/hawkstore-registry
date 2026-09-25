@@ -29,9 +29,10 @@ tools/verify_release_assets.py
 2. 使用 `hawkstore-publishing` 在本地校验 manifest 和插件包。
 3. 在投稿分支增加 `mods/<package-id>/manifest.json` 和 `README.md`。
 4. 使用发布模板创建 Pull Request。
-5. GitHub Actions 自动检查 ID、分类、版本、所有权、索引一致性，以及线上 Release 资源的大小和 SHA-256。
-6. 新作者的第一次发布由维护者人工审核；已接受的版本不可覆盖。
-7. 发布流水线创建 GitHub Release 并更新 `index.json`。
+5. 发布服务通过 Steam OpenID 回调验证作者提交的 SteamID64。作者提交的 manifest 始终保持 `pending`，只有 Registry 服务可以将身份提升为 `verified`。
+6. GitHub Actions 自动检查 ID、分类、版本、所有权、Steam 身份字段、索引一致性，以及线上 Release 资源的大小和 SHA-256。
+7. 新作者的第一次发布由维护者人工审核；已接受的版本不可覆盖。
+8. 发布流水线创建 GitHub Release 并更新 `index.json`。
 
 本地校验：
 

@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ID_RE = re.compile(r"^[a-z0-9]+(?:[._-][a-z0-9]+)+$")
 SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+(?:[-+][0-9A-Za-z.-]+)?$")
 SHA_RE = re.compile(r"^[A-Fa-f0-9]{64}$")
+STEAM_ID_RE = re.compile(r"^7656119[0-9]{10}$")
 REQUIRED = {"schemaVersion", "id", "name", "version", "author", "owners", "description", "categories", "game", "bepInEx", "plugin", "release"}
 
 
@@ -54,6 +55,16 @@ def main() -> int:
             errors.append(f"{path}: unknown categories: {', '.join(sorted(unknown))}")
         if not manifest["owners"]:
             errors.append(f"{path}: at least one owner is required")
+        author = manifest.get("author", {})
+        if not STEAM_ID_RE.fullmatch(author.get("steamId", "")):
+            errors.append(f"{path}: author.steamId must be a SteamID64")
+        verification = author.get("steamVerification", {})
+        if verification.get("provider") != "steam-openid":
+            errors.append(f"{path}: author.steamVerification.provider must be steam-openid")
+        if verification.get("status") not in {"pending", "verified"}:
+            errors.append(f"{path}: author.steamVerification.status must be pending or verified")
+        if verification.get("status") == "verified" and not verification.get("verifiedAt"):
+            errors.append(f"{path}: verified Steam identities require verifiedAt")
         release = manifest.get("release")
         if release and not SHA_RE.fullmatch(release.get("sha256", "")):
             errors.append(f"{path}: release.sha256 must contain 64 hex characters")
