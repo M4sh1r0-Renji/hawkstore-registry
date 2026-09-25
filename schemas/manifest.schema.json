@@ -41,8 +41,12 @@
     "plugin": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["guid"],
-      "properties": { "guid": { "type": "string", "pattern": "^[A-Za-z0-9]+(?:[._-][A-Za-z0-9]+)+$" } }
+      "required": ["guid", "installDirectory", "entryDll"],
+      "properties": {
+        "guid": { "type": "string", "pattern": "^[A-Za-z0-9]+(?:[._-][A-Za-z0-9]+)+$" },
+        "installDirectory": { "type": "string", "pattern": "^[^/\\\\]+$" },
+        "entryDll": { "type": "string", "pattern": "^[^/\\\\]+\\.dll$" }
+      }
     },
     "dependencies": {
       "type": "array",

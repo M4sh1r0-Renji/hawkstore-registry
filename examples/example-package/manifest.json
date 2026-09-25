@@ -10,7 +10,11 @@
   "categories": ["Developer-Tools"],
   "game": { "id": "ravenfield", "versions": ["EA31"] },
   "bepInEx": { "version": "5.4.23" },
-  "plugin": { "guid": "com.example.ravenfield.sample" },
+  "plugin": {
+    "guid": "com.example.ravenfield.sample",
+    "installDirectory": "ExamplePlugin",
+    "entryDll": "ExamplePlugin.dll"
+  },
   "dependencies": [],
   "links": { "source": "https://github.com/example/example-ravenfield-plugin" }
 }

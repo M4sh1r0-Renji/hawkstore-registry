@@ -20,6 +20,8 @@ examples/
 tools/validate_registry.py
 ```
 
+首个正式条目为 `com.usami.dynamicterraincraters`（Dynamic Terrain Craters 1.9.0）。ZIP 通过 GitHub Release 资源分发，Registry 保存不可变下载地址、字节大小和 SHA-256 摘要。
+
 ## 投稿流程
 
 1. 按 Hawkstore 包结构生成插件 ZIP。

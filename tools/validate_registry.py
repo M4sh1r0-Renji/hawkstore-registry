@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ID_RE = re.compile(r"^[a-z0-9]+(?:[._-][a-z0-9]+)+$")
 SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+(?:[-+][0-9A-Za-z.-]+)?$")
 SHA_RE = re.compile(r"^[A-Fa-f0-9]{64}$")
-REQUIRED = {"schemaVersion", "id", "name", "version", "author", "owners", "description", "categories", "game", "bepInEx", "plugin"}
+REQUIRED = {"schemaVersion", "id", "name", "version", "author", "owners", "description", "categories", "game", "bepInEx", "plugin", "release"}
 
 
 def load(path: Path):
@@ -57,6 +57,11 @@ def main() -> int:
         release = manifest.get("release")
         if release and not SHA_RE.fullmatch(release.get("sha256", "")):
             errors.append(f"{path}: release.sha256 must contain 64 hex characters")
+        plugin = manifest.get("plugin", {})
+        for field in ("installDirectory", "entryDll"):
+            value = plugin.get(field, "")
+            if not value or "/" in value or "\\" in value:
+                errors.append(f"{path}: plugin.{field} must be a single path component")
 
     if len(live_ids) != len(set(live_ids)):
         errors.append("mods contains duplicate package IDs")

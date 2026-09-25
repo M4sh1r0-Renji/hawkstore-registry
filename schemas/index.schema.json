@@ -14,7 +14,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "name", "author", "description", "latestVersion", "categories", "gameVersions", "manifestUrl"],
+        "required": ["id", "name", "author", "description", "latestVersion", "categories", "gameVersions", "manifestUrl", "installDirectory"],
         "properties": {
           "id": { "type": "string" },
           "name": { "type": "string" },
@@ -24,6 +24,8 @@
           "categories": { "type": "array", "items": { "type": "string" } },
           "gameVersions": { "type": "array", "items": { "type": "string" } },
           "manifestUrl": { "type": "string", "format": "uri" },
+          "installDirectory": { "type": "string", "pattern": "^[^/\\\\]+$" },
+          "featured": { "type": "boolean" },
           "downloadCount": { "type": "integer", "minimum": 0 }
         }
       }

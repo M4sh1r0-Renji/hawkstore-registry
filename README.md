@@ -20,6 +20,8 @@ examples/
 tools/validate_registry.py
 ```
 
+The first live entry is `com.usami.dynamicterraincraters` (Dynamic Terrain Craters 1.9.0). Its ZIP is distributed as a GitHub Release asset and the registry stores the immutable URL, byte size, and SHA-256 digest.
+
 ## Submission workflow
 
 1. Package the mod as a ZIP using the Hawkstore package layout.

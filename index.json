@@ -1,6 +1,19 @@
 {
   "$schema": "./schemas/index.schema.json",
   "schemaVersion": 1,
-  "generatedAt": "2026-09-25T00:00:00Z",
-  "packages": []
+  "generatedAt": "2026-09-25T01:02:30Z",
+  "packages": [
+    {
+      "id": "com.usami.dynamicterraincraters",
+      "name": "Dynamic Terrain Craters",
+      "author": "usaMi",
+      "description": "Adds configurable runtime terrain deformation, scorch marks, and vegetation clearing to Ravenfield explosions.",
+      "latestVersion": "1.9.0",
+      "categories": ["Gameplay", "Graphics"],
+      "gameVersions": ["EA38"],
+      "manifestUrl": "https://raw.githubusercontent.com/M4sh1r0-Renji/hawkstore-registry/main/mods/com.usami.dynamicterraincraters/manifest.json",
+      "installDirectory": "DynamicTerrainCraters",
+      "featured": true
+    }
+  ]
 }
