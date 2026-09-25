@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/M4sh1r0-Renji/hawkstore-registry/main/schemas/manifest.schema.json",
+  "schemaVersion": 1,
+  "id": "ravenfield.example-plugin",
+  "name": "Example Plugin",
+  "version": "0.0.0",
+  "author": {
+    "name": "usaMi",
+    "github": "M4sh1r0-Renji",
+    "steamId": "76561198981456668",
+    "steamVerification": {
+      "provider": "steam-openid",
+      "status": "verified",
+      "verifiedAt": "2026-09-25T11:17:46.5252798\u002B00:00"
+    }
+  },
+  "owners": [
+    "M4sh1r0-Renji"
+  ],
+  "description": "A demonstrative plugin mod that does absolutely nothing",
+  "categories": [
+    "Gameplay"
+  ],
+  "game": {
+    "id": "ravenfield",
+    "versions": [
+      "EA39"
+    ]
+  },
+  "bepInEx": {
+    "version": "5.4.23"
+  },
+  "plugin": {
+    "guid": "ravenfield.example-plugin",
+    "installDirectory": "ExamplePlugin",
+    "entryDll": "example.dll"
+  },
+  "dependencies": [],
+  "links": {
+    "source": "https://github.com/M4sh1r0-Renji/hawkstore-ravenfield-example-plugin"
+  },
+  "release": {
+    "downloadUrl": "https://github.com/M4sh1r0-Renji/hawkstore-ravenfield-example-plugin/releases/download/v0.0.0/ravenfield.example-plugin-0.0.0-a0765c4703a34d2f99a54dfc762717dd.zip",
+    "sha256": "813B7CF3DBD3D73510B19FE2E2E6C5D407242CD52C1ECF108C6A0EF14D3C7F1D",
+    "size": 180,
+    "publishedAt": "2026-09-25T12:45:00.4181236\u002B00:00"
+  }
+}
