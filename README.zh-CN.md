@@ -18,6 +18,7 @@ mods/
     README.md
 examples/
 tools/validate_registry.py
+tools/verify_release_assets.py
 ```
 
 首个正式条目为 `com.usami.dynamicterraincraters`（Dynamic Terrain Craters 1.9.0）。ZIP 通过 GitHub Release 资源分发，Registry 保存不可变下载地址、字节大小和 SHA-256 摘要。
@@ -28,7 +29,7 @@ tools/validate_registry.py
 2. 使用 `hawkstore-publishing` 在本地校验 manifest 和插件包。
 3. 在投稿分支增加 `mods/<package-id>/manifest.json` 和 `README.md`。
 4. 使用发布模板创建 Pull Request。
-5. GitHub Actions 自动检查 ID、分类、版本、所有权、哈希与索引一致性。
+5. GitHub Actions 自动检查 ID、分类、版本、所有权、索引一致性，以及线上 Release 资源的大小和 SHA-256。
 6. 新作者的第一次发布由维护者人工审核；已接受的版本不可覆盖。
 7. 发布流水线创建 GitHub Release 并更新 `index.json`。
 
@@ -36,6 +37,7 @@ tools/validate_registry.py
 
 ```bash
 python tools/validate_registry.py
+python tools/verify_release_assets.py
 ```
 
 ## 安全说明

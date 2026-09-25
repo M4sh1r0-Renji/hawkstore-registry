@@ -18,6 +18,7 @@ mods/
     README.md
 examples/
 tools/validate_registry.py
+tools/verify_release_assets.py
 ```
 
 The first live entry is `com.usami.dynamicterraincraters` (Dynamic Terrain Craters 1.9.0). Its ZIP is distributed as a GitHub Release asset and the registry stores the immutable URL, byte size, and SHA-256 digest.
@@ -28,7 +29,7 @@ The first live entry is `com.usami.dynamicterraincraters` (Dynamic Terrain Crate
 2. Validate the manifest and package locally with `hawkstore-publishing`.
 3. Add `mods/<package-id>/manifest.json` and `README.md` on a submission branch.
 4. Open a pull request using the publish template.
-5. GitHub Actions validates IDs, categories, versions, ownership, hashes, and index consistency.
+5. GitHub Actions validates IDs, categories, versions, ownership, index consistency, and the live Release asset's size and SHA-256.
 6. A maintainer reviews first-time publishers. Accepted versions are immutable.
 7. The publishing pipeline creates a GitHub Release and updates `index.json`.
 
@@ -36,6 +37,7 @@ Run the repository check locally:
 
 ```bash
 python tools/validate_registry.py
+python tools/verify_release_assets.py
 ```
 
 ## Security

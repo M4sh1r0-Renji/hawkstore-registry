@@ -13,3 +13,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: python tools/validate_registry.py
+      - run: python tools/verify_release_assets.py
