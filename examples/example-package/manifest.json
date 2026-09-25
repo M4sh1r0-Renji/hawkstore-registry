@@ -1,0 +1,16 @@
+{
+  "$schema": "../../schemas/manifest.schema.json",
+  "schemaVersion": 1,
+  "id": "com.example.ravenfield.sample",
+  "name": "Example Ravenfield Plugin",
+  "version": "1.0.0",
+  "author": { "name": "Example Author", "github": "example" },
+  "owners": ["example"],
+  "description": "A minimal example showing the Hawkstore package contract.",
+  "categories": ["Developer-Tools"],
+  "game": { "id": "ravenfield", "versions": ["EA31"] },
+  "bepInEx": { "version": "5.4.23" },
+  "plugin": { "guid": "com.example.ravenfield.sample" },
+  "dependencies": [],
+  "links": { "source": "https://github.com/example/example-ravenfield-plugin" }
+}

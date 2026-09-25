@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hawkstore.dev/schemas/index.schema.json",
+  "title": "Hawkstore registry index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "packages"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "author", "description", "latestVersion", "categories", "gameVersions", "manifestUrl"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "author": { "type": "string" },
+          "description": { "type": "string" },
+          "latestVersion": { "type": "string" },
+          "categories": { "type": "array", "items": { "type": "string" } },
+          "gameVersions": { "type": "array", "items": { "type": "string" } },
+          "manifestUrl": { "type": "string", "format": "uri" },
+          "downloadCount": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  }
+}
